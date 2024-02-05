@@ -1,0 +1,39 @@
+import random 
+ 
+variants = ('камень', 'ножницы', 'бумага') 
+ 
+while True: 
+  player = input('Введите свой выбор >> ') 
+ 
+  if not player in variants: 
+    print('Неправильный ввод! Попробуйте ещё раз!') 
+  else: 
+    computer = random.choice(variants) 
+    print(computer) 
+    if computer == 'камень': 
+      if player == 'камень': 
+        print('Ничья') 
+      elif player == 'ножницы': 
+        print('Компьютер выиграл') 
+      elif player == 'бумага': 
+        print('Игрок выиграл') 
+ 
+    elif computer == 'ножницы': 
+      if player == 'камень': 
+        print('Игрок выиграл') 
+      elif player == 'ножницы': 
+        print('Ничья') 
+      elif player == 'бумага': 
+        print('Компьютер выиграл')         
+ 
+    elif computer == 'бумага': 
+      if player == 'бумага': 
+        print('Ничья') 
+      elif player == 'камень': 
+        print('Компьютер выиграл') 
+      elif player == 'ножницы': 
+        print('Игрок выиграл') 
+    again = "" 
+    again = input("Ещё? (да/нет): ") 
+    if again.upper() != "ДА": 
+        break 
